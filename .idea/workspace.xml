@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8db75ac1-328b-4811-a0ed-11e611793e43" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/init/AuthorityInit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/model/Authority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/compainoncar/backstage/BackstageApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/BackstageApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compainon-car.iml" beforeDir="false" afterPath="$PROJECT_DIR$/companion-car.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="F:\Workspace\compainon-car\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="F:/Program Files/apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="F:\Program Files\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1VvKJxqoo7vba2dFddFhB9E8uZE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backstage/src/main/resources/mapper" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.35747126" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Workspace\compainon-car\backstage\src\main\resources\mapper" />
+      <recent name="F:\Workspace\compainon-car\backstage\src\main\java\com\companioncar\backstage\dao" />
+      <recent name="F:\Workspace\compainon-car\dal\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.companioncar.dal.config" />
+      <recent name="com.companioncar.backstage.controller" />
+      <recent name="com.companioncar.backstage.service.impl" />
+      <recent name="com.companioncar.backstage.service" />
+      <recent name="com.companioncar.backstage.model" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Workspace\compainon-car\backstage\src\main\resources\mapper" />
+      <recent name="F:\Workspace\compainon-car\backstage\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BackstageApplication">
+    <configuration name="JWTUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.companioncar.dal.util.JWTUtil" />
+      <module name="dal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.companioncar.dal.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.compainoncar.app.AppApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BackstageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="backstage" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.companioncar.backstage.BackstageApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.JWTUtil" />
+      <item itemvalue="Spring Boot.AppApplication" />
+      <item itemvalue="Spring Boot.BackstageApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.JWTUtil" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8db75ac1-328b-4811-a0ed-11e611793e43" name="Default Changelist" comment="" />
+      <created>1578128060377</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578128060377</updated>
+      <workItem from="1578128065962" duration="2475000" />
+      <workItem from="1578150772687" duration="5225000" />
+      <workItem from="1578160473490" duration="2778000" />
+      <workItem from="1578197238666" duration="31149000" />
+      <workItem from="1578286911241" duration="14333000" />
+      <workItem from="1578372604153" duration="14433000" />
+      <workItem from="1578389280324" duration="235000" />
+      <workItem from="1578389547387" duration="5078000" />
+      <workItem from="1578458678374" duration="19744000" />
+      <workItem from="1578501207429" duration="5936000" />
+      <workItem from="1578542008688" duration="18684000" />
+      <workItem from="1578573024843" duration="9776000" />
+      <workItem from="1578630628531" duration="522000" />
+      <workItem from="1578631767696" duration="10000" />
+      <workItem from="1578631819154" duration="6316000" />
+      <workItem from="1578669737151" duration="497000" />
+      <workItem from="1578670579455" duration="10337000" />
+      <workItem from="1578716496373" duration="6064000" />
+      <workItem from="1578722995288" duration="10469000" />
+      <workItem from="1578747565037" duration="13905000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="275" y="25" key="#Inspections" timestamp="1578214909578">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="25" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1578214909578" />
+    <state x="275" y="25" key="#Project_Structure" timestamp="1578208639903">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="25" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1578208639903" />
+    <state x="137" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578379422114">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1578379422114" />
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1578753180487">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1578753180487" />
+    <state x="412" y="153" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1578379336789">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="412" y="153" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.728@0.0.1366.728" timestamp="1578379336789" />
+    <state x="246" y="292" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1578201019679">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="246" y="292" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1366.728@0.0.1366.728" timestamp="1578201019679" />
+    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1578390986011">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1578390986011" />
+    <state x="182" y="0" key="CommitChangelistDialog2" timestamp="1578761912054">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="182" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1578761912054" />
+    <state width="580" height="438" key="DebuggerActiveHint" timestamp="1578756918919">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="580" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1578756918919" />
+    <state width="1323" height="198" key="GridCell.Tab.0.bottom" timestamp="1578761914999">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="198" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578761914999" />
+    <state width="1323" height="198" key="GridCell.Tab.0.center" timestamp="1578761914999">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="198" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578761914999" />
+    <state width="1323" height="198" key="GridCell.Tab.0.left" timestamp="1578761914999">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="198" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578761914999" />
+    <state width="1323" height="198" key="GridCell.Tab.0.right" timestamp="1578761914999">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="198" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578761914999" />
+    <state width="1323" height="187" key="GridCell.Tab.1.bottom" timestamp="1578760519973">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="187" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
+    <state width="1323" height="187" key="GridCell.Tab.1.center" timestamp="1578760519973">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="187" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
+    <state width="1323" height="187" key="GridCell.Tab.1.left" timestamp="1578760519973">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="187" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
+    <state width="1323" height="187" key="GridCell.Tab.1.right" timestamp="1578760519973">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="187" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
+    <state width="1323" height="187" key="GridCell.Tab.2.bottom" timestamp="1578760519974">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="187" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578760519974" />
+    <state width="1323" height="187" key="GridCell.Tab.2.center" timestamp="1578760519973">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="187" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
+    <state width="1323" height="187" key="GridCell.Tab.2.left" timestamp="1578760519973">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="187" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
+    <state width="1323" height="187" key="GridCell.Tab.2.right" timestamp="1578760519973">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="187" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
+    <state x="213" y="22" key="Maven.ArtifactSearchDialog" timestamp="1578759002109">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="213" y="22" key="Maven.ArtifactSearchDialog/0.0.1366.728@0.0.1366.728" timestamp="1578759002109" />
+    <state x="88" y="0" key="SettingsEditor" timestamp="1578162256578">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="88" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1578162256578" />
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1578761853490">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1578761853490" />
+    <state x="375" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1578722993454">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1578722993454" />
+    <state x="477" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578761626696">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="477" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1578761626696" />
+    <state x="370" y="4" width="759" height="720" key="find.popup" timestamp="1578460151790">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="370" y="4" width="759" height="720" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1578460151790" />
+    <state x="57" y="71" key="new project wizard" timestamp="1578128269902">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="57" y="71" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1578128269902" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1578750888403">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1578750888403" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1578760292557">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1578760292557" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/impl/UserServiceImpl.java</url>
+          <line>18</line>
+          <properties class="com.companioncar.backstage.service.impl.UserServiceImpl" method="selectBy">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/PassController.java</url>
+          <line>75</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.companioncar.backstage.dao.AuthorityMapper" >
+  <resultMap id="BaseResultMap" type="com.companioncar.backstage.model.Authority" >
+    <id column="authority_id" property="authorityId" jdbcType="VARCHAR" />
+    <result column="controller" property="controller" jdbcType="VARCHAR" />
+    <result column="action" property="action" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="classname" property="classname" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="TINYINT" />
+    <result column="parent_id" property="parentId" jdbcType="SMALLINT" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    authority_id, controller, action, name, classname, status, sort, type, parent_id, 
+    create_time, update_time
+  </sql>
+  <insert id="insertBatch">
+    insert into authority(authority_id,controller,name) values
+    <foreach collection="list" item="item" separator=",">
+      (
+        #{item.authorityId},#{item.controller},#{item.name}
+      )
+    </foreach>
+  </insert>
+  <select id="findAuthorityAndRole" resultType="com.companioncar.backstage.model.AuthorityAndRole">
+    SELECT DISTINCT t2.controller, t3.role_name as roleName
+    FROM authority_role t1
+    RIGHT JOIN authority t2 ON t1.authority_id = t2.authority_id
+    LEFT JOIN role t3 ON t1.role_id = t3.role_id
+  </select>
+  <select id="list" parameterType="com.companioncar.backstage.model.Authority" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from authority
+    <where>
+      <if test="authorityId != null" >
+        authority_id =  #{authorityId,jdbcType=VARCHAR}
+      </if>
+      <if test="controller != null" >
+        controller = #{controller,jdbcType=VARCHAR}
+      </if>
+      <if test="action != null" >
+        action = #{action,jdbcType=VARCHAR}
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR}
+      </if>
+      <if test="classname != null" >
+        classname = #{classname,jdbcType=VARCHAR}
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT}
+      </if>
+      <if test="sort != null" >
+        sort = #{sort,jdbcType=INTEGER}
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=TINYINT}
+      </if>
+      <if test="parentId != null" >
+        parent_id = #{parentId,jdbcType=SMALLINT}
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP}
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP}
+      </if>
+    </where>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from authority
+    where authority_id = #{authorityId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from authority
+    where authority_id = #{authorityId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.companioncar.backstage.model.Authority" >
+    insert into authority (authority_id, controller, action, 
+      name, classname, status, 
+      sort, type, parent_id, 
+      create_time, update_time)
+    values (#{authorityId,jdbcType=VARCHAR}, #{controller,jdbcType=VARCHAR}, #{action,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{classname,jdbcType=VARCHAR}, #{status,jdbcType=TINYINT}, 
+      #{sort,jdbcType=INTEGER}, #{type,jdbcType=TINYINT}, #{parentId,jdbcType=SMALLINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.companioncar.backstage.model.Authority" >
+    insert into authority
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="authorityId != null" >
+        authority_id,
+      </if>
+      <if test="controller != null" >
+        controller,
+      </if>
+      <if test="action != null" >
+        action,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="classname != null" >
+        classname,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="sort != null" >
+        sort,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="parentId != null" >
+        parent_id,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="authorityId != null" >
+        #{authorityId,jdbcType=VARCHAR},
+      </if>
+      <if test="controller != null" >
+        #{controller,jdbcType=VARCHAR},
+      </if>
+      <if test="action != null" >
+        #{action,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="classname != null" >
+        #{classname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.companioncar.backstage.model.Authority" >
+    update authority
+    <set >
+      <if test="controller != null" >
+        controller = #{controller,jdbcType=VARCHAR},
+      </if>
+      <if test="action != null" >
+        action = #{action,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="classname != null" >
+        classname = #{classname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="sort != null" >
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="parentId != null" >
+        parent_id = #{parentId,jdbcType=SMALLINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where authority_id = #{authorityId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.companioncar.backstage.model.Authority" >
+    update authority
+    set controller = #{controller,jdbcType=VARCHAR},
+      action = #{action,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      classname = #{classname,jdbcType=VARCHAR},
+      status = #{status,jdbcType=TINYINT},
+      sort = #{sort,jdbcType=INTEGER},
+      type = #{type,jdbcType=TINYINT},
+      parent_id = #{parentId,jdbcType=SMALLINT},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where authority_id = #{authorityId,jdbcType=VARCHAR}
+  </update>
+</mapper>

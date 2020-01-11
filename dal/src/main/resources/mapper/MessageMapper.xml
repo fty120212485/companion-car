@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.companioncar.dal.dao.MessageMapper" >
+  <resultMap id="BaseResultMap" type="com.companioncar.dal.model.Message" >
+    <id column="message_id" property="messageId" jdbcType="VARCHAR" />
+    <result column="message_type" property="messageType" jdbcType="TINYINT" />
+    <result column="message_link" property="messageLink" jdbcType="VARCHAR" />
+    <result column="is_schedule" property="isSchedule" jdbcType="INTEGER" />
+    <result column="schedule_time" property="scheduleTime" jdbcType="BIGINT" />
+    <result column="send_time" property="sendTime" jdbcType="BIGINT" />
+    <result column="create_time" property="createTime" jdbcType="BIGINT" />
+    <result column="update_time" property="updateTime" jdbcType="BIGINT" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.companioncar.dal.model.Message" extends="BaseResultMap" >
+    <result column="message_content" property="messageContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    message_id, message_type, message_link, is_schedule, schedule_time, send_time, create_time, 
+    update_time
+  </sql>
+  <sql id="Blob_Column_List" >
+    message_content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from message
+    where message_id = #{messageId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from message
+    where message_id = #{messageId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.companioncar.dal.model.Message" >
+    insert into message (message_id, message_type, message_link, 
+      is_schedule, schedule_time, send_time, 
+      create_time, update_time, message_content
+      )
+    values (#{messageId,jdbcType=VARCHAR}, #{messageType,jdbcType=TINYINT}, #{messageLink,jdbcType=VARCHAR}, 
+      #{isSchedule,jdbcType=INTEGER}, #{scheduleTime,jdbcType=BIGINT}, #{sendTime,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=BIGINT}, #{updateTime,jdbcType=BIGINT}, #{messageContent,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.companioncar.dal.model.Message" >
+    insert into message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="messageId != null" >
+        message_id,
+      </if>
+      <if test="messageType != null" >
+        message_type,
+      </if>
+      <if test="messageLink != null" >
+        message_link,
+      </if>
+      <if test="isSchedule != null" >
+        is_schedule,
+      </if>
+      <if test="scheduleTime != null" >
+        schedule_time,
+      </if>
+      <if test="sendTime != null" >
+        send_time,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+      <if test="messageContent != null" >
+        message_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="messageId != null" >
+        #{messageId,jdbcType=VARCHAR},
+      </if>
+      <if test="messageType != null" >
+        #{messageType,jdbcType=TINYINT},
+      </if>
+      <if test="messageLink != null" >
+        #{messageLink,jdbcType=VARCHAR},
+      </if>
+      <if test="isSchedule != null" >
+        #{isSchedule,jdbcType=INTEGER},
+      </if>
+      <if test="scheduleTime != null" >
+        #{scheduleTime,jdbcType=BIGINT},
+      </if>
+      <if test="sendTime != null" >
+        #{sendTime,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=BIGINT},
+      </if>
+      <if test="messageContent != null" >
+        #{messageContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.companioncar.dal.model.Message" >
+    update message
+    <set >
+      <if test="messageType != null" >
+        message_type = #{messageType,jdbcType=TINYINT},
+      </if>
+      <if test="messageLink != null" >
+        message_link = #{messageLink,jdbcType=VARCHAR},
+      </if>
+      <if test="isSchedule != null" >
+        is_schedule = #{isSchedule,jdbcType=INTEGER},
+      </if>
+      <if test="scheduleTime != null" >
+        schedule_time = #{scheduleTime,jdbcType=BIGINT},
+      </if>
+      <if test="sendTime != null" >
+        send_time = #{sendTime,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=BIGINT},
+      </if>
+      <if test="messageContent != null" >
+        message_content = #{messageContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where message_id = #{messageId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.companioncar.dal.model.Message" >
+    update message
+    set message_type = #{messageType,jdbcType=TINYINT},
+      message_link = #{messageLink,jdbcType=VARCHAR},
+      is_schedule = #{isSchedule,jdbcType=INTEGER},
+      schedule_time = #{scheduleTime,jdbcType=BIGINT},
+      send_time = #{sendTime,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=BIGINT},
+      message_content = #{messageContent,jdbcType=LONGVARCHAR}
+    where message_id = #{messageId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.companioncar.dal.model.Message" >
+    update message
+    set message_type = #{messageType,jdbcType=TINYINT},
+      message_link = #{messageLink,jdbcType=VARCHAR},
+      is_schedule = #{isSchedule,jdbcType=INTEGER},
+      schedule_time = #{scheduleTime,jdbcType=BIGINT},
+      send_time = #{sendTime,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=BIGINT},
+      update_time = #{updateTime,jdbcType=BIGINT}
+    where message_id = #{messageId,jdbcType=VARCHAR}
+  </update>
+</mapper>
