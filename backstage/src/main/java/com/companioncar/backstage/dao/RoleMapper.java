@@ -20,9 +20,11 @@ public interface RoleMapper {
 
     List<Role> list(Role record);
 
+    int isHasAuthority(AuthorityAndRole record);
+
     int addAuthority(AuthorityAndRole record);
 
-    Role findByRoleName(String roleName);
+    Role findByRoleCode(String roleName);
 
     int roleInit(Role record);
 

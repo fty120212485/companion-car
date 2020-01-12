@@ -46,8 +46,27 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String findByRoleName(String userId) {
-        return userMapper.findByRoleName(userId);
+    public String findByRoleCode(String userId) {
+        return userMapper.findByRoleCode(userId);
+    }
+
+    @Override
+    public User findByUserName(String username) {
+        return userMapper.findByUserName(username);
+    }
+
+    @Override
+    public int addRole(String roleId, String userId) {
+        return userMapper.addRole(roleId, userId);
+    }
+
+    @Override
+    public boolean isHasRole(String roleId, String userId) {
+        int count = userMapper.isHasRole(roleId, userId);
+        if(count > 0){
+            return true;
+        }
+        return false;
     }
 }
 

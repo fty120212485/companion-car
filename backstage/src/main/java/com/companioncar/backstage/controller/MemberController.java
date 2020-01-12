@@ -10,6 +10,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.StringUtil;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +28,8 @@ public class MemberController {
     @Autowired
     private MemberService memberService;
 
-    @RequestMapping(value = "detail", method = RequestMethod.GET)
+    @RequestMapping(value = "detail", method = RequestMethod.GET, name = "会员详情")
+    @ApiOperation(value = "会员详情")
     @ResponseBody
     public ReturnMsgUtil<Member> detail(String memberId){
         Member user = memberService.selectBy(memberId);
@@ -37,7 +39,8 @@ public class MemberController {
         return ReturnMsgUtil.success(user);
     }
 
-    @RequestMapping(value = "list", method = RequestMethod.GET)
+    @RequestMapping(value = "list", method = RequestMethod.GET, name = "会员列表")
+    @ApiOperation(value = "会员列表")
     @ResponseBody
     public ReturnMsgUtil<List> list(Member member, BaseQueryParam baseQueryParam){
         PageHelper.startPage(baseQueryParam.getPageNum(),baseQueryParam.getPageSize());
@@ -48,7 +51,8 @@ public class MemberController {
         return ReturnMsgUtil.success(new PageInfo<>(list));
     }
 
-    @RequestMapping(value = "update", method = RequestMethod.POST)
+    @RequestMapping(value = "update", method = RequestMethod.POST, name = "修改会员")
+    @ApiOperation(value = "修改会员")
     @ResponseBody
     public ReturnMsgUtil<Member> update(Member member){
         if(StringUtil.isEmpty(member.getMemberId())){
@@ -62,7 +66,8 @@ public class MemberController {
         return ReturnMsgUtil.success(null);
     }
 
-    @RequestMapping(value = "delete", method = RequestMethod.GET)
+    @RequestMapping(value = "delete", method = RequestMethod.GET, name = "删除会员")
+    @ApiOperation(value = "删除会员")
     @ResponseBody
     public ReturnMsgUtil delete(String memberId){
         if(StringUtil.isEmpty(memberId)){
@@ -75,7 +80,8 @@ public class MemberController {
         return ReturnMsgUtil.success(null);
     }
 
-    @RequestMapping(value = "insert", method = RequestMethod.POST)
+    @RequestMapping(value = "insert", method = RequestMethod.POST, name = "新增会员")
+    @ApiOperation(value = "新增会员")
     @ResponseBody
     public ReturnMsgUtil insert(Member member){
         Member check_username = new Member();

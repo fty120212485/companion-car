@@ -39,7 +39,7 @@ public class AuthenticationFilter extends AccessControlFilter {
         //是否已认证
         if (null != getSubject(request, response)
                 && getSubject(request, response).isAuthenticated()) {
-            return true;
+            return false;//每次访问都需要重新认证
         }
         return false;
     }
@@ -76,7 +76,7 @@ public class AuthenticationFilter extends AccessControlFilter {
             //4.调用登录认证login方法
             subject.login(token);
         } catch (Exception e) {
-            ResponseUtil.responseWrite(JSONUtil.stringify(ReturnMsgUtil.fail(2,"请重新登录")), (HttpServletResponse) response);
+            ResponseUtil.responseWrite(JSONUtil.stringify(ReturnMsgUtil.fail(2,"请登录")), (HttpServletResponse) response);
             log.error(e.getMessage(), e);
             return false;
         }

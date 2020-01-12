@@ -51,7 +51,7 @@ public class ShiroConfig {
         List<AuthorityAndRole> list = authorityService.findAuthorityAndRole();
         if(list != null){
             for (AuthorityAndRole authorityAndRole:list) {
-                filterMap.put(authorityAndRole.getController(), "authenticate,authorization[admin,"+authorityAndRole.getRoleName()+"]");
+                filterMap.put(authorityAndRole.getController(), "authenticate,authorization[admin,"+authorityAndRole.getRoleCode()+"]");
             }
         }
         return filterMap;

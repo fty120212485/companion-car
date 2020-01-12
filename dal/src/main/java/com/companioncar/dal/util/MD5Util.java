@@ -9,8 +9,8 @@ public class MD5Util {
 
     public static String getSalt(){
         Random random = new Random();
-        int time = (int) new Date().getTime();
-        return String.valueOf(random.nextInt(time));
+        Long time = new Date().getTime();
+        return String.valueOf(random.nextInt()*time);
     }
 
     public static String getMd5(String pwd, String salt) {

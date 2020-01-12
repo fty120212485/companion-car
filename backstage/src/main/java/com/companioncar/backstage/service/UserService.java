@@ -1,6 +1,7 @@
 package com.companioncar.backstage.service;
 
 import com.companioncar.backstage.model.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -16,5 +17,11 @@ public interface UserService {
 
     int delete(String userId);
 
-    String findByRoleName(String userId);
+    String findByRoleCode(String userId);
+
+    User findByUserName(String username);
+
+    int addRole(String roleId, String userId);
+
+    boolean isHasRole(String roleId, String userId);
 }

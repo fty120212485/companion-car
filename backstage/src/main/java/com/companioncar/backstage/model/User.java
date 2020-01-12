@@ -92,7 +92,7 @@ public class User {
         return salt;
     }
 
-    public void setSalt(String salte) {
+    public void setSalt(String salt) {
         this.salt = salt == null ? null : salt.trim();
     }
 

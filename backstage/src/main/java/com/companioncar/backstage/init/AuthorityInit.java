@@ -36,8 +36,7 @@ public class AuthorityInit implements ApplicationRunner {
         Map<RequestMappingInfo, HandlerMethod> map = requestMappingHandlerMapping.getHandlerMethods();
         List<Authority> list = new ArrayList<Authority>();
         //1.获取已存放的authorityUrl
-        List<Authority> authorityList = authorityService.list(null);
-
+        List<String> authorityList = authorityService.findUrlAll();
         List<Role> roleList = roleService.list(null);
         map.forEach((k,v)->{
             Set<String> patterns = k.getPatternsCondition().getPatterns();
@@ -54,13 +53,15 @@ public class AuthorityInit implements ApplicationRunner {
                 list.add(Authority);
             }
         });
-        //1.保存权限url信息
-        authorityService.insertBatch(list);
-        //2.确保用有admin超级管理员
-        Role role = roleService.findByRoleName("admin");
-        if(role == null){
-            role = roleService.roleInit();
+        if(list.size() > 0){
+            //1.保存权限url信息
+            authorityService.insertBatch(list);
+            //2.确保用有admin超级管理员
+            Role role = roleService.findByRoleCode("admin");
+            if(role == null){
+                role = roleService.roleInit();
+            }
+            roleService.insertBatch(list, role.getRoleId());
         }
-        roleService.insertBatch(list, role.getRoleId());
     }
 }

@@ -4,12 +4,13 @@
   <resultMap id="BaseResultMap" type="com.companioncar.backstage.model.Role" >
     <id column="role_id" property="roleId" jdbcType="VARCHAR" />
     <result column="role_name" property="roleName" jdbcType="VARCHAR" />
+    <result column="role_code" property="roleCode" jdbcType="VARCHAR" />
     <result column="is_delete" property="isDelete" jdbcType="TINYINT" />
     <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
     <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    role_id, role_name, is_delete, create_time, update_time
+    role_id, role_name, role_code, is_delete, create_time, update_time
   </sql>
   <insert id="insertBatch">
     insert into authority_role(authority_id, role_id) values
@@ -20,19 +21,24 @@
     </foreach>
   </insert>
   <insert id="roleInit" parameterType="com.companioncar.backstage.model.Role">
-    insert into role(role_id, role_name, is_delete, create_time, update_time )
-    values(#{roleId,jdbcType=VARCHAR},#{roleName,jdbcType=VARCHAR},#{isDelete,jdbcType=TINYINT},
-    #{createTime,jdbcType=TIMESTAMP},#{createTime,jdbcType=TIMESTAMP})
+    insert into role(role_id, role_name, role_code, is_delete, create_time, update_time )
+    values(#{roleId,jdbcType=VARCHAR},#{roleName,jdbcType=VARCHAR},#{roleCode,jdbcType=VARCHAR},
+    #{isDelete,jdbcType=TINYINT}, #{createTime,jdbcType=TIMESTAMP},#{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <select id="findByRoleName" resultMap="BaseResultMap" parameterType="java.lang.String">
+  <select id="findByRoleCode" resultMap="BaseResultMap" parameterType="java.lang.String">
     select
     <include refid="Base_Column_List"/>
     from role
-    where role_name = #{roleName,jdbcType=VARCHAR}
+    where role_code = #{roleCode,jdbcType=VARCHAR}
+  </select>
+  <select id="isHasAuthority" resultType="java.lang.Integer" parameterType="com.companioncar.backstage.model.AuthorityAndRole">
+    select count(*)
+    from authority_role
+    where authority_id = #{authorityId,jdbcType=VARCHAR} and role_id = #{roleId,jdbcType=VARCHAR}
   </select>
   <insert id="addAuthority" parameterType="com.companioncar.backstage.model.AuthorityAndRole">
-    insert into authority_role(authority_role_id, authority_id, role_id)
-    values(#{authorityRoleId,jdbcType=VARCHAR},#{authorityId,jdbcType=VARCHAR},#{roleId,jdbcType=VARCHAR})
+    insert into authority_role(authority_id, role_id)
+    values(#{authorityId,jdbcType=VARCHAR},#{roleId,jdbcType=VARCHAR})
   </insert>
   <select id="list" parameterType="com.companioncar.backstage.model.Role" resultMap="BaseResultMap">
     select
@@ -44,6 +50,9 @@
       </if>
       <if test="roleName != null" >
         role_name = #{roleName,jdbcType=VARCHAR}
+      </if>
+      <if test="roleCode != null" >
+        role_code = #{roleCode,jdbcType=VARCHAR}
       </if>
       <if test="isDelete != null" >
         is_delete = #{isDelete,jdbcType=TINYINT}
@@ -67,9 +76,9 @@
     where role_id = #{roleId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.companioncar.backstage.model.Role" >
-    insert into role (role_id, role_name, is_delete, 
-      create_time, update_time)
-    values (#{roleId,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}, #{isDelete,jdbcType=TINYINT}, 
+    insert into role (role_id, role_name, role_code,
+      is_delete, create_time, update_time)
+    values (#{roleId,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}, #{roleCode,jdbcType=VARCHAR}, #{isDelete,jdbcType=TINYINT},
       #{createTime,jdbcType=BIGINT}, #{updateTime,jdbcType=BIGINT})
   </insert>
   <insert id="insertSelective" parameterType="com.companioncar.backstage.model.Role" >
@@ -80,6 +89,9 @@
       </if>
       <if test="roleName != null" >
         role_name,
+      </if>
+      <if test="roleCode != null" >
+        role_code,
       </if>
       <if test="isDelete != null" >
         is_delete,
@@ -98,6 +110,9 @@
       <if test="roleName != null" >
         #{roleName,jdbcType=VARCHAR},
       </if>
+      <if test="roleCode != null" >
+        #{roleCode,jdbcType=VARCHAR},
+      </if>
       <if test="isDelete != null" >
         #{isDelete,jdbcType=TINYINT},
       </if>
@@ -115,6 +130,9 @@
       <if test="roleName != null" >
         role_name = #{roleName,jdbcType=VARCHAR},
       </if>
+      <if test="roleCode != null" >
+        role_code = #{roleCode,jdbcType=VARCHAR},
+      </if>
       <if test="isDelete != null" >
         is_delete = #{isDelete,jdbcType=TINYINT},
       </if>
@@ -130,6 +148,7 @@
   <update id="updateByPrimaryKey" parameterType="com.companioncar.backstage.model.Role" >
     update role
     set role_name = #{roleName,jdbcType=VARCHAR},
+      role_code = #{roleCode,jdbcType=VARCHAR},
       is_delete = #{isDelete,jdbcType=TINYINT},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = #{updateTime,jdbcType=TIMESTAMP}

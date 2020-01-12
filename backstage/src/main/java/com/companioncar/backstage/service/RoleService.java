@@ -19,9 +19,11 @@ public interface RoleService {
 
     int setStatus(Role record);
 
+    boolean isHasAuthority(AuthorityAndRole record);
+
     int addAuthority(AuthorityAndRole record);
 
-    Role findByRoleName(String roleName);
+    Role findByRoleCode(String roleCode);
 
     Role roleInit();
 

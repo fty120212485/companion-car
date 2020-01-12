@@ -58,7 +58,20 @@ public class AuthorityServiceImpl implements AuthorityService {
 
     @Override
     public int insertBatch(List<Authority> list) {
-        return authorityMapper.insertBatch(list);
+        if(list.size() > 0){
+            authorityMapper.insertBatch(list);
+            return 1;
+        }
+        return 0;
+    }
+
+    @Override
+    public List<String> findUrlAll() {
+        List<String> list = authorityMapper.findUrlAll();
+        if(list.size() > 0){
+            return list;
+        }
+        return null;
     }
 }
 

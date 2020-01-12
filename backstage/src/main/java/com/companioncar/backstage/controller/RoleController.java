@@ -10,6 +10,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.StringUtil;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,17 +29,19 @@ public class RoleController {
     @Autowired
     private RoleService roleService;
 
-    @RequestMapping(value = "detail", method = RequestMethod.GET)
+    @RequestMapping(value = "detail", method = RequestMethod.GET, name = "角色详情")
+    @ApiOperation(value = "角色详情")
     @ResponseBody
-    public ReturnMsgUtil<Role> detail(String memberId){
-        Role user = roleService.selectBy(memberId);
+    public ReturnMsgUtil<Role> detail(String roleId){
+        Role user = roleService.selectBy(roleId);
         if(user == null) {
             return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND, "该角色不存在！");
         }
         return ReturnMsgUtil.success(user);
     }
 
-    @RequestMapping(value = "list", method = RequestMethod.GET)
+    @RequestMapping(value = "list", method = RequestMethod.GET, name = "角色列表")
+    @ApiOperation(value = "角色列表")
     @ResponseBody
     public ReturnMsgUtil<List> list(Role role, BaseQueryParam baseQueryParam){
         /*Subject subject = SecurityUtils.getSubject();
@@ -56,7 +59,8 @@ public class RoleController {
         return ReturnMsgUtil.success(new PageInfo<>(list));
     }
 
-    @RequestMapping(value = "update", method = RequestMethod.POST)
+    @RequestMapping(value = "update", method = RequestMethod.POST, name = "修改角色")
+    @ApiOperation(value = "修改角色")
     @ResponseBody
     public ReturnMsgUtil<Role> update(Role role){
         if(StringUtil.isEmpty(role.getRoleId())){
@@ -70,7 +74,8 @@ public class RoleController {
         return ReturnMsgUtil.success(null);
     }
 
-    @RequestMapping(value = "delete", method = RequestMethod.GET)
+    @RequestMapping(value = "delete", method = RequestMethod.GET, name = "删除角色")
+    @ApiOperation(value = "删除角色")
     @ResponseBody
     public ReturnMsgUtil delete(String roleId){
         if(StringUtil.isEmpty(roleId)){
@@ -83,7 +88,8 @@ public class RoleController {
         return ReturnMsgUtil.success(null);
     }
 
-    @RequestMapping(value = "insert", method = RequestMethod.POST)
+    @RequestMapping(value = "insert", method = RequestMethod.POST, name = "添加角色")
+    @ApiOperation(value = "添加角色")
     @ResponseBody
     public ReturnMsgUtil insert(Role role){
         Role check_roleName = new Role();
@@ -105,7 +111,8 @@ public class RoleController {
         return ReturnMsgUtil.success(role);
     }
 
-    @RequestMapping(value = "setStatus", method = RequestMethod.GET)
+    @RequestMapping(value = "setStatus", method = RequestMethod.GET, name = "是否使用")
+    @ApiOperation(value = "是否使用")
     @ResponseBody
     public ReturnMsgUtil setStatus(String roleId, Byte isDelete){
         Role role = roleService.selectBy(roleId);
@@ -120,7 +127,8 @@ public class RoleController {
         return ReturnMsgUtil.success(null);
     }
 
-    @RequestMapping(value = "addAuthority", method = RequestMethod.GET)
+    @RequestMapping(value = "addAuthority", method = RequestMethod.GET, name="分配权限")
+    @ApiOperation(value = "分配权限")
     @ResponseBody
     public ReturnMsgUtil addAuthority(AuthorityAndRole authorityAndRole){
         if(Strings.isBlank(authorityAndRole.getAuthorityId())){
@@ -129,9 +137,12 @@ public class RoleController {
         if(Strings.isBlank(authorityAndRole.getRoleId())){
             return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND, "缺少roleId参数");
         }
+        if(roleService.isHasAuthority(authorityAndRole)){
+            return ReturnMsgUtil.fail(2, "权限已分配，请勿重复分配");
+        }
         int result = roleService.addAuthority(authorityAndRole);
-        if(result == 0){
-            ReturnMsgUtil.fail(2, "操作失败");
+        if(result != 0){
+            ReturnMsgUtil.fail(2, "分配失败");
         }
         return ReturnMsgUtil.success(null);
     }

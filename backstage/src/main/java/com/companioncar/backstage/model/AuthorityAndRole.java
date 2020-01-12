@@ -10,9 +10,11 @@ public class AuthorityAndRole {
 
     private String roleId;
 
+    @ApiModelProperty(hidden = true)
     private String controller;
 
-    private String roleName;
+    @ApiModelProperty(hidden = true)
+    private String roleCode;
 
     public String getAuthorityRoleId() {
         return authorityRoleId;
@@ -46,11 +48,11 @@ public class AuthorityAndRole {
         this.controller = controller;
     }
 
-    public String getRoleName() {
-        return roleName;
+    public String getRoleCode() {
+        return roleCode;
     }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    public void setRoleCode(String roleCode) {
+        this.roleCode = roleCode;
     }
 }

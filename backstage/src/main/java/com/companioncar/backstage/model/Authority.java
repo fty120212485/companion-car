@@ -11,19 +11,7 @@ public class Authority {
 
     private String controller;
 
-    private String action;
-
     private String name;
-
-    private String classname;
-
-    private Byte status;
-
-    private Integer sort;
-
-    private Byte type;
-
-    private Short parentId;
 
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     @ApiModelProperty(hidden = true)
@@ -49,60 +37,12 @@ public class Authority {
         this.controller = controller == null ? null : controller.trim();
     }
 
-    public String getAction() {
-        return action;
-    }
-
-    public void setAction(String action) {
-        this.action = action == null ? null : action.trim();
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
-    public String getClassname() {
-        return classname;
-    }
-
-    public void setClassname(String classname) {
-        this.classname = classname == null ? null : classname.trim();
-    }
-
-    public Byte getStatus() {
-        return status;
-    }
-
-    public void setStatus(Byte status) {
-        this.status = status;
-    }
-
-    public Integer getSort() {
-        return sort;
-    }
-
-    public void setSort(Integer sort) {
-        this.sort = sort;
-    }
-
-    public Byte getType() {
-        return type;
-    }
-
-    public void setType(Byte type) {
-        this.type = type;
-    }
-
-    public Short getParentId() {
-        return parentId;
-    }
-
-    public void setParentId(Short parentId) {
-        this.parentId = parentId;
+        this.name = name;
     }
 
     public Date getCreateTime() {

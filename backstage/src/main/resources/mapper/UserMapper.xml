@@ -21,9 +21,21 @@
     user_id, username, password, real_name, salt, phone, email, status, is_super, consumer,
     remark, department, create_time, update_time
   </sql>
-  <select id="findByRoleName" parameterType="java.lang.String" resultType="java.lang.String">
+  <select id="isHasRole" resultType="java.lang.Integer">
+    select count(*) from user_role where user_id = #{userId,jdbcType=VARCHAR} AND role_id = #{roleId,jdbcType=VARCHAR}
+  </select>
+  <insert id="addRole">
+    insert into user_role(user_id, role_id) values(#{userId,jdbcType=VARCHAR}, #{roleId,jdbcType=VARCHAR})
+  </insert>
+  <select id="findByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
     select
-        CONCAT(GROUP_CONCAT(r.role_name),'')
+    <include refid="Base_Column_List"/>
+    from user
+    where username = #{username,jdbcType=VARCHAR}
+  </select>
+  <select id="findByRoleCode" parameterType="java.lang.String" resultType="java.lang.String">
+    select
+        CONCAT(GROUP_CONCAT(r.role_code),'')
     from
         role r
             LEFT JOIN
@@ -39,43 +51,43 @@
     from user
     <where>
       <if test="userId != null" >
-        user_id = #{userId,jdbcType=VARCHAR}
+        and user_id = #{userId,jdbcType=VARCHAR}
       </if>
       <if test="username != null" >
-        username = #{username,jdbcType=VARCHAR}
+        and username = #{username,jdbcType=VARCHAR}
       </if>
       <if test="realName != null" >
-        real_name = #{realName,jdbcType=VARCHAR}
+        and real_name = #{realName,jdbcType=VARCHAR}
       </if>
       <if test="salt != null" >
-        salt = #{salt,jdbcType=VARCHAR}
+        and salt = #{salt,jdbcType=VARCHAR}
       </if>
       <if test="phone != null" >
-        phone = #{phone,jdbcType=VARCHAR}
+        and phone = #{phone,jdbcType=VARCHAR}
       </if>
       <if test="email != null" >
-        email = #{email,jdbcType=VARCHAR}
+        and email = #{email,jdbcType=VARCHAR}
       </if>
       <if test="status != null" >
-        status = #{status,jdbcType=TINYINT}
+        and status = #{status,jdbcType=TINYINT}
       </if>
       <if test="isSuper != null" >
-        is_super = #{isSuper,jdbcType=TINYINT}
+        and is_super = #{isSuper,jdbcType=TINYINT}
       </if>
       <if test="consumer != null" >
-        consumer = #{consumer,jdbcType=VARCHAR}
+        and consumer = #{consumer,jdbcType=VARCHAR}
       </if>
       <if test="remark != null" >
-        remark = #{remark,jdbcType=VARCHAR}
+        and remark = #{remark,jdbcType=VARCHAR}
       </if>
       <if test="department != null" >
-        department = #{department,jdbcType=VARCHAR}
+        and department = #{department,jdbcType=VARCHAR}
       </if>
       <if test="createTime != null" >
-        create_time = #{createTime,jdbcType=TIMESTAMP}
+        and create_time = #{createTime,jdbcType=TIMESTAMP}
       </if>
       <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=TIMESTAMP}
+        and update_time = #{updateTime,jdbcType=TIMESTAMP}
       </if>
     </where>
   </select>

@@ -1,5 +1,7 @@
 package com.companioncar.backstage.controller;
 
+import com.companioncar.backstage.model.Role;
+import com.companioncar.backstage.service.RoleService;
 import com.companioncar.backstage.service.UserService;
 import com.companioncar.backstage.model.User;
 import com.companioncar.dal.msg.ResponseCode;
@@ -10,6 +12,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.StringUtil;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +30,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "detail", method = RequestMethod.GET)
+    @Autowired
+    private RoleService roleService;
+
+    @RequestMapping(value = "detail", method = RequestMethod.GET, name = "用户详情")
+    @ApiOperation(value = "用户详情")
     @ResponseBody
     public ReturnMsgUtil<User> detail(String userId){
         User user = userService.selectBy(userId);
@@ -37,7 +44,8 @@ public class UserController {
         return ReturnMsgUtil.success(user);
     }
 
-    @RequestMapping(value = "list", method = RequestMethod.GET)
+    @RequestMapping(value = "list", method = RequestMethod.GET, name = "用户列表")
+    @ApiOperation(value = "用户列表")
     @ResponseBody
     public ReturnMsgUtil<List> list(User user, BaseQueryParam baseQueryParam){
         PageHelper.startPage(baseQueryParam.getPageNum(),baseQueryParam.getPageSize());
@@ -48,7 +56,8 @@ public class UserController {
         return ReturnMsgUtil.success(new PageInfo<>(list));
     }
 
-    @RequestMapping(value = "update", method = RequestMethod.POST)
+    @RequestMapping(value = "update", method = RequestMethod.POST, name = "修改用户")
+    @ApiOperation(value = "修改用户")
     @ResponseBody
     public ReturnMsgUtil<User> update(User user){
         if(StringUtil.isEmpty(user.getUserId())){
@@ -62,7 +71,8 @@ public class UserController {
         return ReturnMsgUtil.success(null);
     }
 
-    @RequestMapping(value = "delete", method = RequestMethod.GET)
+    @RequestMapping(value = "delete", method = RequestMethod.GET, name = "删除用户")
+    @ApiOperation(value = "删除用户")
     @ResponseBody
     public ReturnMsgUtil delete(String userId){
         if(StringUtil.isEmpty(userId)){
@@ -75,7 +85,8 @@ public class UserController {
         return ReturnMsgUtil.success(null);
     }
 
-    @RequestMapping(value = "insert", method = RequestMethod.POST)
+    @RequestMapping(value = "insert", method = RequestMethod.POST, name = "新建用户")
+    @ApiOperation(value = "新建用户")
     @ResponseBody
     public ReturnMsgUtil insert(User user){
         User check_username = new User();
@@ -101,21 +112,26 @@ public class UserController {
         return ReturnMsgUtil.success(user);
     }
 
-    @RequestMapping(value="login", method = RequestMethod.POST)
+    @RequestMapping(value = "addRole", method = RequestMethod.GET, name = "分配角色")
+    @ApiOperation(value = "分配角色")
     @ResponseBody
-    public ReturnMsgUtil login(String username, String password){
-        User user = new User();
-        user.setUsername(username);
-        List<User> list = userService.list(user);
-        if(list == null){
-            return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND, "用户名或密码不正确");
+    public ReturnMsgUtil addRole(String roleId, String userId){
+        User user = userService.selectBy(userId);
+        if(user == null){
+            return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND, "该用户不存在");
         }
-        String salt = list.get(0).getSalt();
-        user.setPassword(MD5Util.getMd5(password, salt));
-        list = userService.list(user);
-        if(list == null){
-            return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND, "用户名或密码不正确");
+        Role role = roleService.selectBy(roleId);
+        if(role == null){
+            return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND, "该角色不存在");
         }
-        return ReturnMsgUtil.success(list.get(0));
+        boolean isHas = userService.isHasRole(roleId, userId);
+        if(isHas){
+            return ReturnMsgUtil.fail(2, "角色已分配，请勿重复分配");
+        }
+        int result = userService.addRole(roleId, userId);
+        if(result == 0){
+            return ReturnMsgUtil.fail(2, "分配失败");
+        }
+        return ReturnMsgUtil.success(null);
     }
 }

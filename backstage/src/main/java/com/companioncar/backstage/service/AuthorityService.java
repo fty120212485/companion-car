@@ -19,4 +19,6 @@ public interface AuthorityService {
     List<AuthorityAndRole> findAuthorityAndRole();
 
     int insertBatch(List<Authority> list);
+
+    List<String> findUrlAll();
 }

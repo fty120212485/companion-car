@@ -55,14 +55,23 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
+    public boolean isHasAuthority(AuthorityAndRole record) {
+        int result = roleMapper.isHasAuthority(record);
+        if(result > 0){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public int addAuthority(AuthorityAndRole record) {
         record.setAuthorityRoleId(UUIDUtil.getUUID());
         return roleMapper.addAuthority(record);
     }
 
     @Override
-    public Role findByRoleName(String roleName) {
-        return roleMapper.findByRoleName(roleName);
+    public Role findByRoleCode(String roleName) {
+        return roleMapper.findByRoleCode(roleName);
     }
 
     @Override
@@ -80,14 +89,17 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public int insertBatch(List<Authority> record, String roleId) {
-        List<AuthorityAndRole> list = new ArrayList<>();
-        for (Authority auth : record) {
-            AuthorityAndRole authAndRole = new AuthorityAndRole();
-            authAndRole.setAuthorityId(auth.getAuthorityId());
-            authAndRole.setRoleId(roleId);
-            list.add(authAndRole);
+        if(record.size() > 0){
+            List<AuthorityAndRole> list = new ArrayList<>();
+            for (Authority auth : record) {
+                AuthorityAndRole authAndRole = new AuthorityAndRole();
+                authAndRole.setAuthorityId(auth.getAuthorityId());
+                authAndRole.setRoleId(roleId);
+                list.add(authAndRole);
+            }
+            return roleMapper.insertBatch(list);
         }
-        return roleMapper.insertBatch(list);
+        return 0;
     }
 }
 

@@ -12,11 +12,13 @@ import com.companioncar.dal.util.UUIDUtil;
 import com.companioncar.backstage.model.JsonWebToken;
 import io.jsonwebtoken.Claims;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.logging.log4j.util.Strings;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -38,6 +40,7 @@ public class PassController {
     private RedisService redisService;
 
     @RequestMapping(value = "login", method = RequestMethod.POST, name = "登录")
+    @ApiOperation(value = "登录")
     @ResponseBody
     public ReturnMsgUtil login(String username, String password, HttpServletRequest request){
         if(Strings.isBlank(username)){
@@ -58,7 +61,7 @@ public class PassController {
         }
         JsonWebToken token = new JsonWebToken();
         token.setUser(check_password.get(0));
-        String rolesName = userService.findByRoleName(token.user.getUserId());
+        String rolesName = userService.findByRoleCode(token.user.getUserId());
         Long millis = 1000 * 60 * 60L;
         String jwt = JWTUtil.createJWT(UUIDUtil.getUUID(), token.user.getUserId(), user.getUsername(), rolesName, millis);
         token.setToken(jwt);
@@ -70,6 +73,7 @@ public class PassController {
     }
 
     @RequestMapping(value="logout", method = RequestMethod.GET, name = "注销")
+    @ApiOperation(value = "注销")
     @ResponseBody
     public ReturnMsgUtil logout(HttpServletRequest request) throws ServletException {
         Claims claims = (Claims) request.getAttribute("claims");
@@ -84,6 +88,32 @@ public class PassController {
             return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND, "账号未登录，注销失败");
         }
         redisService.del(userId);
+        return ReturnMsgUtil.success(null);
+    }
+
+    @RequestMapping(value = "changePWD", method = RequestMethod.POST, name="修改密码")
+    @ApiOperation(value = "修改密码")
+    @ResponseBody
+    public ReturnMsgUtil changePWD(String username, String oldPassword, String newPassword){
+        User user = userService.findByUserName(username);
+        if(user == null){
+            return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND, "该用户名不存在");
+        }
+        String salt = user.getSalt();
+        User check_pwd = new User();
+        check_pwd.setUsername(username);
+        check_pwd.setPassword(MD5Util.getMd5(oldPassword, salt));
+        List<User> list = userService.list(check_pwd);
+        if(list == null){
+            return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND, "旧密码输入错误");
+        }
+        User update_pwd = new User();
+        update_pwd.setUserId(user.getUserId());
+        update_pwd.setPassword(MD5Util.getMd5(newPassword, salt));
+        int result = userService.update(update_pwd);
+        if(result != 1){
+            return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND, "修改密码失败");
+        }
         return ReturnMsgUtil.success(null);
     }
 }

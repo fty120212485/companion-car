@@ -9,6 +9,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.github.pagehelper.StringUtil;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +27,8 @@ public class AuthorityController {
     @Autowired
     private AuthorityService authorityService;
 
-    @RequestMapping(value = "detail", method = RequestMethod.GET)
+    @RequestMapping(value = "detail", method = RequestMethod.GET, name = "权限详情")
+    @ApiOperation(value = "权限详情")
     @ResponseBody
     public ReturnMsgUtil<Authority> detail(String memberId){
         Authority authority = authorityService.selectBy(memberId);
@@ -36,7 +38,8 @@ public class AuthorityController {
         return ReturnMsgUtil.success(authority);
     }
 
-    @RequestMapping(value = "list", method = RequestMethod.GET)
+    @RequestMapping(value = "list", method = RequestMethod.GET, name = "权限列表")
+    @ApiOperation(value = "权限列表")
     @ResponseBody
     public ReturnMsgUtil<List> list(Authority authority, BaseQueryParam baseQueryParam){
         PageHelper.startPage(baseQueryParam.getPageNum(),baseQueryParam.getPageSize());
@@ -47,7 +50,8 @@ public class AuthorityController {
         return ReturnMsgUtil.success(new PageInfo<>(list));
     }
 
-    @RequestMapping(value = "update", method = RequestMethod.POST)
+    @RequestMapping(value = "update", method = RequestMethod.POST, name = "修改权限")
+    @ApiOperation(value = "修改权限")
     @ResponseBody
     public ReturnMsgUtil<Authority> update(Authority authority){
         if(StringUtil.isEmpty(authority.getAuthorityId())){
@@ -61,7 +65,8 @@ public class AuthorityController {
         return ReturnMsgUtil.success(null);
     }
 
-    @RequestMapping(value = "delete", method = RequestMethod.GET)
+    @RequestMapping(value = "delete", method = RequestMethod.GET, name = "删除权限")
+    @ApiOperation(value = "删除权限")
     @ResponseBody
     public ReturnMsgUtil delete(String authorityId){
         if(StringUtil.isEmpty(authorityId)){
@@ -74,7 +79,8 @@ public class AuthorityController {
         return ReturnMsgUtil.success(null);
     }
 
-    @RequestMapping(value = "insert", method = RequestMethod.POST)
+    @RequestMapping(value = "insert", method = RequestMethod.POST, name = "新增权限")
+    @ApiOperation(value = "新增权限")
     @ResponseBody
     public ReturnMsgUtil insert(Authority authority){
         Authority check_controller = new Authority();

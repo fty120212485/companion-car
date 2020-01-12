@@ -23,4 +23,6 @@ public interface AuthorityMapper {
     List<AuthorityAndRole> findAuthorityAndRole();
 
     int insertBatch(List<Authority> list);
+
+    List<String> findUrlAll();
 }

@@ -1,6 +1,7 @@
 package com.companioncar.backstage.dao;
 
 import com.companioncar.backstage.model.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -19,5 +20,11 @@ public interface UserMapper {
 
     List<User> list(User record);
 
-    String findByRoleName(String userId);
+    String findByRoleCode(String userId);
+
+    User findByUserName(String username);
+
+    int addRole(@Param("roleId")String roleId, @Param("userId")String userId);
+
+    int isHasRole(@Param("roleId")String roleId, @Param("userId")String userId);
 }

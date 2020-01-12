@@ -2,15 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8db75ac1-328b-4811-a0ed-11e611793e43" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/init/AuthorityInit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/model/Authority.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/compainoncar/backstage/BackstageApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/BackstageApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/AuthorityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/AuthorityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/PassController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/PassController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/dao/AuthorityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/dao/AuthorityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/dao/RoleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/dao/RoleMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/dao/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/dao/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/init/AuthorityInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/init/AuthorityInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/model/Authority.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/model/Authority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/model/AuthorityAndRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/model/AuthorityAndRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/AuthorityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/AuthorityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/impl/AuthorityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/impl/AuthorityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/impl/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/shiro/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/shiro/AuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/shiro/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/shiro/ShiroConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backstage/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/compainon-car.iml" beforeDir="false" afterPath="$PROJECT_DIR$/companion-car.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/resources/mapper/AuthorityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/resources/mapper/AuthorityMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/resources/mapper/RoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/resources/mapper/RoleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dal/src/main/java/com/companioncar/dal/util/MD5Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/dal/src/main/java/com/companioncar/dal/util/MD5Util.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +45,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="fengtianyong &lt;120212485@qq.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IgnoredFileRootStore">
@@ -68,10 +91,9 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Workspace\compainon-car\backstage\src\main\resources\mapper" />
-      <recent name="F:\Workspace\compainon-car\backstage\src\main\java\com\companioncar\backstage\dao" />
-      <recent name="F:\Workspace\compainon-car\dal\src\main\resources" />
+      <recent name="F:\Workspace\compainon-car\backstage\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.companioncar.dal.config" />
@@ -80,14 +102,28 @@
       <recent name="com.companioncar.backstage.service" />
       <recent name="com.companioncar.backstage.model" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Workspace\compainon-car\backstage\src\main\resources\mapper" />
-      <recent name="F:\Workspace\compainon-car\backstage\src\main\resources" />
+      <recent name="F:\Workspace\compainon-car\backstage\src\main\java\com\companioncar\backstage\dao" />
+      <recent name="F:\Workspace\compainon-car\dal\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BackstageApplication">
     <configuration name="JWTUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.companioncar.dal.util.JWTUtil" />
+      <module name="dal" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.companioncar.dal.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MD5Util" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.companioncar.dal.util.MD5Util" />
       <module name="dal" />
       <extension name="coverage">
         <pattern>
@@ -118,9 +154,11 @@
       <item itemvalue="Application.JWTUtil" />
       <item itemvalue="Spring Boot.AppApplication" />
       <item itemvalue="Spring Boot.BackstageApplication" />
+      <item itemvalue="Application.MD5Util" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MD5Util" />
         <item itemvalue="Application.JWTUtil" />
       </list>
     </recent_temporary>
@@ -166,12 +204,25 @@
       <workItem from="1578670579455" duration="10337000" />
       <workItem from="1578716496373" duration="6064000" />
       <workItem from="1578722995288" duration="10469000" />
-      <workItem from="1578747565037" duration="13905000" />
+      <workItem from="1578747565037" duration="14809000" />
+      <workItem from="1578811263788" duration="18220000" />
     </task>
+    <task id="LOCAL-00001" summary="首次提交:1.环境搭建;2.权限控制">
+      <created>1578762051257</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578762051257</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="首次提交:1.环境搭建;2.权限控制" />
+    <option name="LAST_COMMIT_MESSAGE" value="首次提交:1.环境搭建;2.权限控制" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="25" key="#Inspections" timestamp="1578214909578">
@@ -186,10 +237,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1578379422114" />
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1578753180487">
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser" timestamp="1578856975725">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1578753180487" />
+    <state x="488" y="72" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1578856975725" />
     <state x="412" y="153" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1578379336789">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -202,62 +253,62 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="113" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1578390986011" />
-    <state x="182" y="0" key="CommitChangelistDialog2" timestamp="1578761912054">
+    <state x="182" y="0" key="CommitChangelistDialog2" timestamp="1578762048729">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="182" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1578761912054" />
-    <state width="580" height="438" key="DebuggerActiveHint" timestamp="1578756918919">
+    <state x="182" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1578762048729" />
+    <state width="580" height="438" key="DebuggerActiveHint" timestamp="1578845335990">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="580" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1578756918919" />
-    <state width="1323" height="198" key="GridCell.Tab.0.bottom" timestamp="1578761914999">
+    <state width="580" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1578845335990" />
+    <state width="1323" height="206" key="GridCell.Tab.0.bottom" timestamp="1578857351086">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="198" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578761914999" />
-    <state width="1323" height="198" key="GridCell.Tab.0.center" timestamp="1578761914999">
+    <state width="1323" height="206" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578857351086" />
+    <state width="1323" height="206" key="GridCell.Tab.0.center" timestamp="1578857351085">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="198" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578761914999" />
-    <state width="1323" height="198" key="GridCell.Tab.0.left" timestamp="1578761914999">
+    <state width="1323" height="206" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1578857351085" />
+    <state width="1323" height="206" key="GridCell.Tab.0.left" timestamp="1578857351085">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="198" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578761914999" />
-    <state width="1323" height="198" key="GridCell.Tab.0.right" timestamp="1578761914999">
+    <state width="1323" height="206" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1578857351085" />
+    <state width="1323" height="206" key="GridCell.Tab.0.right" timestamp="1578857351086">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="198" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578761914999" />
-    <state width="1323" height="187" key="GridCell.Tab.1.bottom" timestamp="1578760519973">
+    <state width="1323" height="206" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1578857351086" />
+    <state width="1323" height="206" key="GridCell.Tab.1.bottom" timestamp="1578857351087">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="187" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
-    <state width="1323" height="187" key="GridCell.Tab.1.center" timestamp="1578760519973">
+    <state width="1323" height="206" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578857351087" />
+    <state width="1323" height="206" key="GridCell.Tab.1.center" timestamp="1578857351086">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="187" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
-    <state width="1323" height="187" key="GridCell.Tab.1.left" timestamp="1578760519973">
+    <state width="1323" height="206" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1578857351086" />
+    <state width="1323" height="206" key="GridCell.Tab.1.left" timestamp="1578857351086">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="187" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
-    <state width="1323" height="187" key="GridCell.Tab.1.right" timestamp="1578760519973">
+    <state width="1323" height="206" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1578857351086" />
+    <state width="1323" height="206" key="GridCell.Tab.1.right" timestamp="1578857351086">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="187" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
-    <state width="1323" height="187" key="GridCell.Tab.2.bottom" timestamp="1578760519974">
+    <state width="1323" height="206" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1578857351086" />
+    <state width="1323" height="206" key="GridCell.Tab.2.bottom" timestamp="1578857351087">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="187" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578760519974" />
-    <state width="1323" height="187" key="GridCell.Tab.2.center" timestamp="1578760519973">
+    <state width="1323" height="206" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1578857351087" />
+    <state width="1323" height="206" key="GridCell.Tab.2.center" timestamp="1578857351087">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="187" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
-    <state width="1323" height="187" key="GridCell.Tab.2.left" timestamp="1578760519973">
+    <state width="1323" height="206" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1578857351087" />
+    <state width="1323" height="206" key="GridCell.Tab.2.left" timestamp="1578857351087">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="187" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
-    <state width="1323" height="187" key="GridCell.Tab.2.right" timestamp="1578760519973">
+    <state width="1323" height="206" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1578857351087" />
+    <state width="1323" height="206" key="GridCell.Tab.2.right" timestamp="1578857351087">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="187" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1578760519973" />
+    <state width="1323" height="206" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1578857351087" />
     <state x="213" y="22" key="Maven.ArtifactSearchDialog" timestamp="1578759002109">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -266,14 +317,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="88" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1578162256578" />
-    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1578761853490">
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2" timestamp="1578762062725">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="100" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1578761853490" />
-    <state x="375" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1578722993454">
+    <state x="275" y="100" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1578762062725" />
+    <state x="375" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1578811265385">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1578722993454" />
+    <state x="375" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1578811265385" />
     <state x="477" y="282" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578761626696">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -290,28 +341,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1578750888403" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1578760292557">
+    <state x="346" y="50" width="672" height="677" key="search.everywhere.popup" timestamp="1578856807524">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1578760292557" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/service/impl/UserServiceImpl.java</url>
-          <line>18</line>
-          <properties class="com.companioncar.backstage.service.impl.UserServiceImpl" method="selectBy">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/PassController.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="346" y="50" width="672" height="677" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1578856807524" />
   </component>
 </project>

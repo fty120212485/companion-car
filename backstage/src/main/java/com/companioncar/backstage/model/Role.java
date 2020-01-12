@@ -14,6 +14,9 @@ public class Role {
     @ApiModelProperty(value = "角色名称")
     private String roleName;
 
+    @ApiModelProperty(value = "角色编号")
+    private String roleCode;
+
     @ApiModelProperty(value="是否使用", example = "1")
     private Byte isDelete;
 
@@ -39,6 +42,14 @@ public class Role {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName == null ? null : roleName.trim();
+    }
+
+    public String getRoleCode() {
+        return roleCode;
+    }
+
+    public void setRoleCode(String roleCode) {
+        this.roleCode = roleCode;
     }
 
     public Byte getIsDelete() {
