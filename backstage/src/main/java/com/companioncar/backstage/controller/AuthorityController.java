@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Date;
 import java.util.List;
 
-@Api(value="roleController",tags={"权限操作接口"})
+@Api(value="roleController",tags={"权限管理"})
 @Controller
 @RequestMapping("/back/authority")
 public class AuthorityController {

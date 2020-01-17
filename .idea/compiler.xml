@@ -25,7 +25,7 @@
       <module name="app" options="-parameters" />
       <module name="backstage" options="-parameters" />
       <module name="common" options="-parameters" />
-      <module name="companion-car" options="-parameters" />
+      <module name="companion-car" options="" />
       <module name="dal" options="-parameters" />
     </option>
   </component>

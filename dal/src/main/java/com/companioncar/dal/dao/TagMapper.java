@@ -2,6 +2,8 @@ package com.companioncar.dal.dao;
 
 import com.companioncar.dal.model.Tag;
 
+import java.util.List;
+
 public interface TagMapper {
     int deleteByPrimaryKey(String tagId);
 
@@ -14,4 +16,6 @@ public interface TagMapper {
     int updateByPrimaryKeySelective(Tag record);
 
     int updateByPrimaryKey(Tag record);
+
+    List<Tag> list(Tag tag);
 }

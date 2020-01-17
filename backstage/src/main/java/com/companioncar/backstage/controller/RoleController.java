@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Date;
 import java.util.List;
 
-@Api(value="roleController",tags={"角色操作接口"})
+@Api(value="roleController",tags={"角色管理"})
 @Controller
 @RequestMapping("/back/role")
 public class RoleController {

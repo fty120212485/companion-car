@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Date;
 import java.util.List;
 
-@Api(value="userController",tags={"用户操作接口"})
+@Api(value="userController",tags={"用户管理"})
 @Controller
 @RequestMapping("/back/user")
 public class UserController {

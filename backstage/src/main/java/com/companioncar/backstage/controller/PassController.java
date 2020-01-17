@@ -27,10 +27,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-@Api(value = "passController", tags = "通行操作接口")
+@Api(value = "passController", tags = "通行管理")
 @Controller
 @RequestMapping("/back/pass")
-@ComponentScan("com.companioncar.dal.config")
 public class PassController {
 
     @Autowired

@@ -1,19 +1,36 @@
 package com.companioncar.dal.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiOperation;
+
+import java.util.Date;
+
+@ApiModel("标签实体类")
 public class Tag {
+    @ApiModelProperty(hidden = true)
     private String tagId;
 
+    @ApiModelProperty(value = "标签名称")
     private String tagName;
 
+    @ApiModelProperty(value = "是否使用", example = "1")
     private Byte isDelete;
 
-    private Long clickCount;
+    @ApiModelProperty(value = "点击数量", example = "500")
+    private Integer clickCount;
 
-    private Byte tagType;
+    @ApiModelProperty(value = "标签类型（1.资讯，2.其他）", example = "1")
+    private Byte type;
 
-    private Long createTime;
+    @ApiModelProperty(hidden = true)
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date createTime;
 
-    private Long updateTime;
+    @ApiModelProperty(hidden = true)
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    private Date updateTime;
 
     public String getTagId() {
         return tagId;
@@ -39,35 +56,35 @@ public class Tag {
         this.isDelete = isDelete;
     }
 
-    public Long getClickCount() {
+    public Integer getClickCount() {
         return clickCount;
     }
 
-    public void setClickCount(Long clickCount) {
+    public void setClickCount(Integer clickCount) {
         this.clickCount = clickCount;
     }
 
-    public Byte getTagType() {
-        return tagType;
+    public Byte getType() {
+        return type;
     }
 
-    public void setTagType(Byte tagType) {
-        this.tagType = tagType;
+    public void setType(Byte type) {
+        this.type = type;
     }
 
-    public Long getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Long createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public Long getUpdateTime() {
+    public Date getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Long updateTime) {
+    public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
 }

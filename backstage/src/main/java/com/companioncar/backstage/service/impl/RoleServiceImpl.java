@@ -1,10 +1,13 @@
 package com.companioncar.backstage.service.impl;
 
+import com.companioncar.backstage.dao.UserMapper;
 import com.companioncar.backstage.model.Authority;
 import com.companioncar.backstage.model.AuthorityAndRole;
+import com.companioncar.backstage.model.User;
 import com.companioncar.backstage.service.RoleService;
 import com.companioncar.backstage.dao.RoleMapper;
 import com.companioncar.backstage.model.Role;
+import com.companioncar.dal.util.MD5Util;
 import com.companioncar.dal.util.UUIDUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +21,9 @@ public class RoleServiceImpl implements RoleService {
 
     @Autowired
     private RoleMapper roleMapper;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public Role selectBy(String roleId) {
@@ -78,12 +84,26 @@ public class RoleServiceImpl implements RoleService {
     public Role roleInit(){
         Role role = new Role();
         role.setRoleId(UUIDUtil.getUUID());
-        role.setRoleName("admin");
+        role.setRoleName("管理员");
+        role.setRoleCode("admin");
         byte isDelete = 1;
         role.setIsDelete(isDelete);
-        role.setUpdateTime(new Date());
+        role.setCreateTime(new Date());
         role.setUpdateTime(new Date());
         roleMapper.roleInit(role);
+        User user = userMapper.findByUserName("admin");
+        if(user == null){
+            user = new User();
+            user.setUserId(UUIDUtil.getUUID());
+            user.setUsername("admin");
+            String salt = MD5Util.getSalt();
+            user.setPassword(MD5Util.getMd5("123456", salt));
+            user.setSalt(salt);
+            byte is_super = 1;
+            user.setIsSuper(is_super);
+            userMapper.userInit(user);
+            userMapper.addRole(role.getRoleId(),user.getUserId());
+        }
         return role;
     }
 

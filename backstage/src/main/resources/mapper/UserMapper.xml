@@ -21,6 +21,10 @@
     user_id, username, password, real_name, salt, phone, email, status, is_super, consumer,
     remark, department, create_time, update_time
   </sql>
+  <insert id="userInit" parameterType="com.companioncar.backstage.model.User">
+    insert into user(user_id, username, password, salt) values(#{userId,jdbcType=VARCHAR},
+     #{username,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{salt,jdbcType=VARCHAR})
+  </insert>
   <select id="isHasRole" resultType="java.lang.Integer">
     select count(*) from user_role where user_id = #{userId,jdbcType=VARCHAR} AND role_id = #{roleId,jdbcType=VARCHAR}
   </select>

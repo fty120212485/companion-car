@@ -37,7 +37,7 @@ public class Member {
 
     private String address;
 
-    private Long point;
+    private Integer point;
 
     private Date createTime;
 
@@ -179,11 +179,11 @@ public class Member {
         this.address = address == null ? null : address.trim();
     }
 
-    public Long getPoint() {
+    public Integer getPoint() {
         return point;
     }
 
-    public void setPoint(Long point) {
+    public void setPoint(Integer point) {
         this.point = point;
     }
 

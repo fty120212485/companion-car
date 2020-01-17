@@ -51,15 +51,16 @@ public class ShiroConfig {
         List<AuthorityAndRole> list = authorityService.findAuthorityAndRole();
         if(list != null){
             for (AuthorityAndRole authorityAndRole:list) {
-                filterMap.put(authorityAndRole.getController(), "authenticate,authorization[admin,"+authorityAndRole.getRoleCode()+"]");
+                filterMap.put(authorityAndRole.getController(),
+                        "authenticate,authorization[admin,"+authorityAndRole.getRoleCode()+"]");
             }
         }
         return filterMap;
     }
 
-    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator(){
+    /*public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator(){
         DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
         defaultAdvisorAutoProxyCreator.setProxyTargetClass(true);
         return defaultAdvisorAutoProxyCreator;
-    }
+    }*/
 }

@@ -1,7 +1,10 @@
 package com.companioncar.backstage.controller;
 
 import com.companioncar.backstage.service.MemberService;
+import com.companioncar.dal.model.Favorite;
 import com.companioncar.dal.model.Member;
+import com.companioncar.dal.model.MemberCar;
+import com.companioncar.dal.model.Point;
 import com.companioncar.dal.msg.ResponseCode;
 import com.companioncar.dal.msg.ReturnMsgUtil;
 import com.companioncar.dal.util.MD5Util;
@@ -20,7 +23,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Date;
 import java.util.List;
 
-@Api(value="memberController",tags={"会员操作接口"})
+@Api(value="memberController",tags={"会员管理"})
 @Controller
 @RequestMapping("/back/member")
 public class MemberController {
@@ -103,5 +106,53 @@ public class MemberController {
             return ReturnMsgUtil.fail(2, "新增失败");
         }
         return ReturnMsgUtil.success(member);
+    }
+
+    @RequestMapping(value = "favorite", method = RequestMethod.GET, name = "会员收藏")
+    @ApiOperation(value = "会员收藏")
+    @ResponseBody
+    public ReturnMsgUtil<List> favorite(String memberId, BaseQueryParam baseQueryParam){
+        PageHelper.startPage(baseQueryParam.getPageNum(),baseQueryParam.getPageSize());
+        Member member = memberService.selectBy(memberId);
+        if(member == null){
+            return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND,"该会员不存在");
+        }
+        List<Favorite> list= memberService.favorite(member.getMemberId());
+        if(list == null){
+            return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND, "找不到数据");
+        }
+        return ReturnMsgUtil.success(new PageInfo<>(list));
+    }
+
+    @RequestMapping(value = "memberCar", method = RequestMethod.GET, name = "会员座驾")
+    @ApiOperation(value = "会员座驾")
+    @ResponseBody
+    public ReturnMsgUtil<List> memberCar(String memberId, byte type, BaseQueryParam baseQueryParam){
+        PageHelper.startPage(baseQueryParam.getPageNum(),baseQueryParam.getPageSize());
+        Member member = memberService.selectBy(memberId);
+        if(member == null){
+            return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND,"该会员不存在");
+        }
+        List<MemberCar> list = memberService.memberCar(memberId, type);
+        if(list == null){
+            return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND, "找不到数据");
+        }
+        return ReturnMsgUtil.success(new PageInfo<>(list));
+    }
+
+    @RequestMapping(value = "memberPoint", method = RequestMethod.GET, name = "会员积分")
+    @ApiOperation(value = "会员积分")
+    @ResponseBody
+    public ReturnMsgUtil<List> memberPoint(String memberId, BaseQueryParam baseQueryParam){
+        PageHelper.startPage(baseQueryParam.getPageNum(),baseQueryParam.getPageSize());
+        Member member = memberService.selectBy(memberId);
+        if(member == null){
+            return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND,"该会员不存在");
+        }
+        List<Point> list = memberService.memberPoint(memberId);
+        if(list == null){
+            return ReturnMsgUtil.fail(ResponseCode.NOT_FOUND, "找不到数据");
+        }
+        return ReturnMsgUtil.success(new PageInfo<>(list));
     }
 }

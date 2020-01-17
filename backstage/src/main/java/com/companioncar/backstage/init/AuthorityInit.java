@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.condition.PatternsRequestCondition;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
@@ -32,6 +33,7 @@ public class AuthorityInit implements ApplicationRunner {
     RequestMappingHandlerMapping requestMappingHandlerMapping;
 
     @Override
+    @Transactional
     public void run(ApplicationArguments args) throws Exception {
         Map<RequestMappingInfo, HandlerMethod> map = requestMappingHandlerMapping.getHandlerMethods();
         List<Authority> list = new ArrayList<Authority>();
@@ -53,15 +55,14 @@ public class AuthorityInit implements ApplicationRunner {
                 list.add(Authority);
             }
         });
-        if(list.size() > 0){
-            //1.保存权限url信息
-            authorityService.insertBatch(list);
-            //2.确保用有admin超级管理员
-            Role role = roleService.findByRoleCode("admin");
-            if(role == null){
-                role = roleService.roleInit();
-            }
-            roleService.insertBatch(list, role.getRoleId());
+        //1.保存权限url信息
+        authorityService.insertBatch(list);
+        //2.确保用有admin超级管理员
+        Role role = roleService.findByRoleCode("admin");
+
+        if(role == null){
+            role = roleService.roleInit();
         }
+        roleService.insertBatch(list, role.getRoleId());
     }
 }

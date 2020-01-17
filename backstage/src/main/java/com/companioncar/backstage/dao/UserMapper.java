@@ -27,4 +27,6 @@ public interface UserMapper {
     int addRole(@Param("roleId")String roleId, @Param("userId")String userId);
 
     int isHasRole(@Param("roleId")String roleId, @Param("userId")String userId);
+
+    int userInit(User record);
 }
