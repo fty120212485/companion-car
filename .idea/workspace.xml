@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8db75ac1-328b-4811-a0ed-11e611793e43" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/SubBrandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/controller/SubBrandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/src/main/java/com/companioncar/dal/model/Tag.java" beforeDir="false" afterPath="$PROJECT_DIR$/dal/src/main/java/com/companioncar/dal/model/Tag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/src/main/java/com/companioncar/dal/util/JWTUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/dal/src/main/java/com/companioncar/dal/util/JWTUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dal/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dal/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/shiro/AuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backstage/src/main/java/com/companioncar/backstage/shiro/AuthenticationFilter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +188,7 @@
       <workItem from="1581583482774" duration="25000" />
       <workItem from="1581583538946" duration="1441000" />
       <workItem from="1581746268215" duration="395000" />
-      <workItem from="1581864016588" duration="1928000" />
+      <workItem from="1581864016588" duration="2072000" />
     </task>
     <task id="LOCAL-00001" summary="首次提交:1.环境搭建;2.权限控制">
       <created>1578762051257</created>
@@ -207,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579275808522</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修改jwt">
+      <created>1581866011710</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581866011710</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,7 +220,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="首次提交:1.环境搭建;2.权限控制" />
     <MESSAGE value="添加后台功能模块管理" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加后台功能模块管理" />
+    <MESSAGE value="修改jwt" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改jwt" />
   </component>
   <component name="WindowStateProjectService">
     <state x="275" y="25" key="#Inspections" timestamp="1578214909578">
@@ -255,14 +260,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="321" y="60" width="758" height="490" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1581864193154" />
-    <state x="182" y="0" key="CommitChangelistDialog2" timestamp="1579275760958">
+    <state x="182" y="0" key="CommitChangelistDialog2" timestamp="1581866106379">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="182" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1579275760958" />
+    <state x="182" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1581866106379" />
     <state width="580" height="438" key="DebuggerActiveHint" timestamp="1581864961531">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="580" height="438" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1581864961531" />
+    <state x="26" y="55" key="DiffContextDialog" timestamp="1581865966929">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="26" y="55" key="DiffContextDialog/0.0.1366.728@0.0.1366.728" timestamp="1581865966929" />
     <state x="365" y="113" key="FileChooserDialogImpl" timestamp="1579020229010">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

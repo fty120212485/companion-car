@@ -52,6 +52,10 @@ public class AuthenticationFilter extends AccessControlFilter {
         try {
             //2.解析token并验证
             claims = JWTUtil.parseJWT(jwt);
+            if(claims == null){
+                ResponseUtil.responseWrite(JSONUtil.stringify(ReturnMsgUtil.fail(2,"未登陆")), (HttpServletResponse) response);
+                return false;
+            }
             String userId = claims.getSubject();
             BeanFactory factory = WebApplicationContextUtils.getRequiredWebApplicationContext(request.getServletContext());
             if(factory != null && factory.getBean("redisService") != null){
