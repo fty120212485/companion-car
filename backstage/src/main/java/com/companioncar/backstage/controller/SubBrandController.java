@@ -66,7 +66,7 @@ public class SubBrandController {
         if(result == 0){
             return ReturnMsgUtil.fail(ResponseCode.UPD_FAIL, "新增失败");
         }
-        return ReturnMsgUtil.success(null);
+        return ReturnMsgUtil.success(subBrand);
     }
 
     @RequestMapping(value = "list", method = RequestMethod.POST, name = "子品牌列表")

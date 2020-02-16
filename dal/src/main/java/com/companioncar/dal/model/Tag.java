@@ -9,19 +9,20 @@ import java.util.Date;
 
 @ApiModel("标签实体类")
 public class Tag {
+
     @ApiModelProperty(hidden = true)
     private String tagId;
 
     @ApiModelProperty(value = "标签名称")
     private String tagName;
 
-    @ApiModelProperty(value = "是否使用", example = "1")
+    @ApiModelProperty(value = "是否使用（0.否，1.是）", example = "1")
     private Byte isDelete;
 
-    @ApiModelProperty(value = "点击数量", example = "500")
+    @ApiModelProperty(value = "点击数量", hidden = true)
     private Integer clickCount;
 
-    @ApiModelProperty(value = "标签类型（1.资讯，2.其他）", example = "1")
+    @ApiModelProperty(value = "标签类型（1.资讯标签，2.用户标签）", example = "1")
     private Byte type;
 
     @ApiModelProperty(hidden = true)

@@ -54,6 +54,9 @@ public class JWTUtil {
      * @throws Exception
      */
     public static Claims parseJWT(String jwt) throws Exception {
+        if(Strings.isBlank(jwt)){
+            return null;
+        }
         Claims claims = Jwts.parser()
                 .setSigningKey(DatatypeConverter.parseBase64Binary(JWT_SECERT))
                 .parseClaimsJws(jwt).getBody();
